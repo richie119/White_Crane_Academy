@@ -16,7 +16,6 @@ As a WCA student, you must conduct yourself in an honest and trustworthy manner 
 ## Section A (Concepts)
 1. (3 marks) What is the efficient way of passing a struct to a function? Why?  
 2. (3 marks) In one or two sentences explain the concept of low coupling with reference to a function call?  
-Low coupling is a concept that ensures that a function call is independent of other functions, so that itcan be called without the need for any other functions to be called first.
 3. (3 marks) In 2 or 3 sentences explain in non-technical terms what is meant by the term “modular programming”Modular programming  
 4. (3 marks) In one or two sentences explain why const is used to qualify a function parameter
 
