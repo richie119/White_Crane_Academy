@@ -164,8 +164,11 @@ struct Route selectTours(struct Route tr[], int len) {
     for (i = 0; i < len; i++) {
         printf("\nRoute Destination:  %d\n", i + 1);
         printf("====================\n");
-        _________________// Display Route Info using tr array [2 marks]
-        printf("Train Line   : %s\n", printf("Country    : %s\n", printf("City       : %s\n", }
+        // Display Route Info using tr array [2 marks]
+        printf("Train Line   : %s\n", _________);
+        printf("Country    : %s\n",____________);
+        printf("City       : %s\n", ___________);
+    }
     do {
         printf("\nEnter Route Destination #: ");
         scanf("%d%*c", &dest);
@@ -190,8 +193,7 @@ int main() {
         ______________// Select a Route by calling "selectRoute" and assign the returned route to Commuter's route routex [2.5 marks]
         ______________// Call setCommuter and pass the relevant data[1.5 mark]
         i++;
-    } while ();
-    ______________// Iterate as long as the user input is not "quit" [2 mark]
+    } while ( ______________);// Iterate as long as the user input is not "quit" [2 mark]
     return 0;
 }
 
