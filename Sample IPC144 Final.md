@@ -80,38 +80,43 @@ struct Route {
     double baseFare; //Base Ticket Price
 };
 
-struct Commuter {
-    char name[40];
-    int age;
-    char nationality[30];
-    struct Bag bagArr[MAXBAGS];
-    struct Route routex;
-};
+/*Create a struct called Commuter with the following properties  
+name - can store up to 40 characters  
+age - an integer  
+nationality - can store up to 30 characters
+struct Bag array called "bagArr" that can store MAXBAGS
+struct Route called routex   [2 marks]*/
+
+____________________________  
+____________________________  
+
 
 void setOneBag(struct Bag* bg) {
     int flag;
-    printf("\t\tEnter Bag Weight: "); // Obtain and assign bag weight [0.5 marks]
-    scanf("%lf", &bg->weight);
+    printf("\t\tEnter Bag Weight: ");    
+    ______________________________;// Obtain and assign bag weight [0.5 marks]
+
     do {
-        printf("\t\tEnter Width height length: "); // Obtain and assign bag dimension in one line through bg [1.5 marks]
-        // Switch to case 1 when bag type is 1, case 2 when bag type is 2 [0.5 marks]
+        printf("\t\tEnter Width height length: ");
+        ____________________// Obtain and assign bag dimension in one line through bg [1.5 marks]
+        _________________________// Switch to case 1 when bag type is 1, case 2 when bag type is 2 [0.5 marks]
         switch (bg->type) {
         case 1:
-            // Set flag 1 when the obtained width+length+height is greater than MAXDIMENSIONCHECK using conditional statement [0.5 mark]
+            __________________// Set flag 1 when the obtained width+length+height is greater than MAXDIMENSIONCHECK using conditional statement [0.5 mark]
             if (flag == 1) {
                 printf("\t\tcheck-in (width+height+length) should be <= 70\n\n");
             }
             else {
-                // Calculate the extra cost for a check-in bag and assign to Commuter's bag cc's extraCost [1.5 mark]
+            ___________________-// Calculate the extra cost for a check-in bag and assign to Commuter's bag cc's extraCost [1.5 mark]
             }
             break;
         case 2:
-            // Set flag 1 when the obtained width+length+height is greater than MAXDIMENSIONCARRY using conditional statement [0.5 mark]
+            ____________________// Set flag 1 when the obtained width+length+height is greater than MAXDIMENSIONCARRY using conditional statement [0.5 mark]
             if (flag == 1) {
                 printf("\t\tcheck-in (width+height+length) should be <= 50\n\n");
             }
             else {
-                // Calculate the extra cost for a carry-on bag and assign to Commuter's bag cc's extraCost [1.5 mark]
+            _______________________ // Calculate the extra cost for a carry-on bag and assign to Commuter's bag cc's extraCost [1.5 mark]
             }
             break;
         default:
@@ -127,28 +132,31 @@ void setBagsInfo(struct Bag bgs[]) {
     printf("\tHow many Check-Ins: ");
     scanf("%d", &checkB);
     for (i = 0; i < checkB; i++) {
-        // set type of bgs element to check-in type(1) [0.5 mark]
-        setOneBag; // Call setOneBag with the relevant data [1 mark]
+    ____________________// set type of bgs element to check-in type(1) [0.5 mark]
+    _________________ // Call setOneBag with the relevant data [1 mark]
         printf("\n");
     }
     printf("\tHow many Carry-Ons: ");
     scanf("%d", &carryB);
     for (; i < (checkB + carryB); i++) {
-        // set type of bgs element to carry-on type(2) [0.5 mark]
-        // Call setOneBag with the relevant data [1 mark]
+    ______________ // set type of bgs element to carry-on type(2) [0.5 mark]
+    _____________// Call setOneBag with the relevant data [1 mark]
     }
 }
 
 void setCommuter(struct Commuter *p) {
     do {
-        // Obtain and store Commuter Information [1.5 marks]
         printf("Enter Commuter Name: ");
         printf("Enter Commuter Age : ");
         printf("Enter Nationality   : ");
-        // Display an error when name or nationality is an empty string or age is not in between 0 and 120 [1 mark]
-        printf("Input Error on Name or Age or Nationality !!!\n");
-        // Reset name and nationality strings to be empty strings [1 mark]
-    } while ();
+        ___________// Obtain and store Commuter Information [1.5 marks]
+        _______________{// Display an error when name or nationality is an empty string or age is not in between 0 and 120 [1 mark]
+            printf("Input Error on Name or Age or Nationality !!!\n");
+        _______________// Reset name and nationality strings to be empty strings [1 mark]
+        }else {
+            printf("Enter Bag Info      : \n");//Call setBagsInfo with the relevant data [1 mark]
+        }
+    } while (_______________);// Loop back when name or nationality is an empty string//or age is not in between 0 and 120 [1 mark]
 }
 
 struct Route selectTours(struct Route tr[], int len) {
@@ -156,15 +164,15 @@ struct Route selectTours(struct Route tr[], int len) {
     for (i = 0; i < len; i++) {
         printf("\nRoute Destination:  %d\n", i + 1);
         printf("====================\n");
-        // Display Route Info using tr array [2 marks]
+        _________________// Display Route Info using tr array [2 marks]
         printf("Train Line   : %s\n", printf("Country    : %s\n", printf("City       : %s\n", }
     do {
         printf("\nEnter Route Destination #: ");
         scanf("%d%*c", &dest);
-        // Display the below error when the selected destination is not in between 1 and 3(inclusive) [0.5 mark]
-        // Iterate when "dest" is not between 1 and 3(inclusive) [0.5 mark]
-        // Return the selected destination [1 mark]
-    } while ();
+        _____________________// Display the below error when the selected destination is not in between 1 and 3(inclusive) [0.5 mark]
+        _____________________// Iterate when "dest" is not between 1 and 3(inclusive) [0.5 mark]
+        ___________________// Return the selected destination [1 mark]
+    } while (____________);
 }
 
 int main() {
@@ -173,17 +181,17 @@ int main() {
         {"ScenicRoute", "Germany","Cologne", 999.99},
         {"Pacific Line","France", "Dijone", 1111.11}
     };
-    // Declare a Commuter array called com and initialize to zero (Size should be set to NOPAS) [1 mark]
+    ______________// Declare a Commuter array called com and initialize to zero (Size should be set to NOPAS) [1 mark]
     printf("== Welcome to European Travel Agency ==\n\n");
     do {
         printf("Do you have a Commuter (Enter yes/no or 'quit' to Quit Program): ");
-        // Read user Input and assign to "userInput variable" [1 mark]
-        // Add ONE commuter information to "com" if the userinput is "yes": Note: Use strcmp to compare strings [1 mark]
-        // Select a Route by calling "selectRoute" and assign the returned route to Commuter's route routex [2.5 marks]
-        // Call setCommuter and pass the relevant data[1.5 mark]
+        _________________// Read user Input and assign to "userInput variable" [1 mark]
+        _______________// Add ONE commuter information to "com" if the userinput is "yes": Note: Use strcmp to compare strings [1 mark]
+        ______________// Select a Route by calling "selectRoute" and assign the returned route to Commuter's route routex [2.5 marks]
+        ______________// Call setCommuter and pass the relevant data[1.5 mark]
         i++;
     } while ();
-    // Iterate as long as the user input is not "quit" [2 mark]
+    ______________// Iterate as long as the user input is not "quit" [2 mark]
     return 0;
 }
 
