@@ -14,10 +14,10 @@ Introduction to Programming Using C IPC144
 As a WCA student, you must conduct yourself in an honest and trustworthy manner in allaspects of your academic career. A dishonest attempt to obtain an academic advantage isconsidered an offense, and will not be tolerated by the College
 
 ## Section A (Concepts)
-1. (3 marks) What is the efficient way of passing a struct to a function? Why?  
-2. (3 marks) In one or two sentences explain the concept of low coupling with reference to a function call?  
-3. (3 marks) In 2 or 3 sentences explain in non-technical terms what is meant by the term “modular programming”Modular programming  
-4. (3 marks) In one or two sentences explain why const is used to qualify a function parameter
+1. (3 marks) Why is it important to initialize pointers in C, and what issues can arise from uninitialized pointers?
+2. (3 marks) How are pointers used as function parameters in C? Provide an example of modifying the original data.
+3. (3 marks) What are the three common modes in the fopen function in C, and what do they represent?
+4. (3 marks) How does the binary search algorithm work in C? Describe its basic steps or code.
 
 ## Section B (Code Walkthroughs)
  You should do a walkthrough on the following code.(10 marks)
