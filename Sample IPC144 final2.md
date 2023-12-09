@@ -129,8 +129,8 @@ As a WCA student, you must conduct yourself in an honest and trustworthy manner 
 23                                        {"I Dreamed a Dream", 263},
 24                                        {"Highway To Hell", 207}};
 25
-26     struct Song playlist[SONGS] = {{0}}; // Declare playlist as an array of struct Song
-27     int shuffled[SONGS] = {0}, config1 = _______, config2 = _______, config3 = _______;  // Fill in the blanks with appropriate values
+26     struct Song playlist[SONGS] = {{0}}; // Fix: Declare playlist as an array of struct Song
+27     int shuffled[SONGS] = {0}, config1 = 4, config2 = 30, config3 = 8;
 28
 29     createPlaylist(playlist, songBank, config1, config2, shuffled);
 30     playSongs(playlist, shuffled, config3);
@@ -189,6 +189,7 @@ As a WCA student, you must conduct yourself in an honest and trustworthy manner 
 83     calculateTimeFormat(total, &min, &sec);
 84     printf("Total playing time: %3d:%02d\n", min, sec);
 85 }
+
 
 
 ```
