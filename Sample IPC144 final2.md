@@ -103,92 +103,92 @@ As a WCA student, you must conduct yourself in an honest and trustworthy manner 
 
 ## Section B+ (Code Walkthroughs)
  You should do a walkthrough on the following code.(10 marks)
-```c
-#include <stdio.h>
-#include <string.h>
+ 1 #include <stdio.h>
+ 2 #include <string.h>
+ 3
+ 4 #define STRING_LEN 20
+ 5 #define SONG_BANK 5
+ 6 #define SONGS 3
+ 7
+ 8 struct Song
+ 9 {
+10     char title[STRING_LEN + 1];
+11     int seconds;
+12 };
+13
+14 void calculateTimeFormat(int tSeconds, int *minutes, int *seconds);
+15 void createPlaylist(struct Song playlist[], const struct Song bank[], int offset, int seed, int order[]);
+16 void playSongs(const struct Song songs[], const int order[], int crossFade);
+17
+18 int main(void)
+19 {
+20     struct Song songBank[SONG_BANK] = {{"Careless Whisper", 300},
+21                                        {"Jailhouse Rock", 156},
+22                                        {"Oh Pretty Woman", 176},
+23                                        {"I Dreamed a Dream", 263},
+24                                        {"Highway To Hell", 207}};
+25
+26     struct Song playlist[SONGS] = {{0}}; // Declare playlist as an array of struct Song
+27     int shuffled[SONGS] = {0}, config1 = _______, config2 = _______, config3 = _______;  // Fill in the blanks with appropriate values
+28
+29     createPlaylist(playlist, songBank, config1, config2, shuffled);
+30     playSongs(playlist, shuffled, config3);
+31
+32     return 0;
+33 }
+34
+35 void calculateTimeFormat(const int tSeconds, int *minutes, int *seconds)
+36 {
+37     *minutes = tSeconds / 60;
+38     *seconds = tSeconds % 60;
+39 }
+40
+41 void createPlaylist(struct Song playlist[], const struct Song bank[], int offset, int seed, int order[])
+42 {
+43     int i = 0, idx = seed % SONGS;
+44     int test;
+45
+46     do
+47     {
+48         test = idx + 2 < SONGS ? idx + 2 : idx + 2 - SONGS;
+49         order[i] = idx + 2 < SONGS ? idx + 2 : idx + 2 - SONGS;
+50
+51         if (offset < 1 || offset > SONG_BANK)
+52         {
+53             offset = SONG_BANK;
+54         }
+55
+56         playlist[i++] = bank[--offset];
+57         test = idx + 1 < SONGS ? idx + 1 : idx + 1 - SONGS;
+58         idx = idx + 1 < SONGS ? idx + 1 : idx + 1 - SONGS;
+59
+60     } while (i < SONGS);
+61 }
+62
+63 void playSongs(const struct Song songs[], const int order[], int crossFade)
+64 {
+65     int i, min, sec, total = 0;
+66
+67     for (i = 0; i < SONGS; i++)
+68     {
+69         total += songs[order[i]].seconds;
+70
+71         if (crossFade && (i + 1 < SONGS))
+72         {
+73             total -= crossFade;
+74             calculateTimeFormat(songs[order[i]].seconds - crossFade, &min, &sec);
+75         }
+76         else
+77         {
+78             calculateTimeFormat(songs[order[i]].seconds, &min, &sec);
+79         }
+80         printf("%-20s %2d:%02d\n", songs[order[i]].title, min, sec);
+81     }
+82
+83     calculateTimeFormat(total, &min, &sec);
+84     printf("Total playing time: %3d:%02d\n", min, sec);
+85 }
 
-#define STRING_LEN 20
-#define SONG_BANK 5
-#define SONGS 3
-
-struct Song
-{
-    char title[STRING_LEN + 1];
-    int seconds;
-};
-
-void calculateTimeFormat(int tSeconds, int *minutes, int *seconds);
-void createPlaylist(struct Song playlist[], const struct Song bank[], int offset, int seed, int order[]);
-void playSongs(const struct Song songs[], const int order[], int crossFade);
-
-int main(void)
-{
-    struct Song songBank[SONG_BANK] = {{"Careless Whisper", 300},
-                                       {"Jailhouse Rock", 156},
-                                       {"Oh Pretty Woman", 176},
-                                       {"I Dreamed a Dream", 263},
-                                       {"Highway To Hell", 207}};
-
-    struct Song playlist[SONGS] = {{0}}; // Fix: Declare playlist as an array of struct Song
-    int shuffled[SONGS] = {0}, config1 = 4, config2 = 30, config3 = 8;
-
-    createPlaylist(playlist, songBank, config1, config2, shuffled);
-    playSongs(playlist, shuffled, config3);
-
-    return 0;
-}
-
-void calculateTimeFormat(const int tSeconds, int *minutes, int *seconds)
-{
-    *minutes = tSeconds / 60;
-    *seconds = tSeconds % 60;
-}
-
-void createPlaylist(struct Song playlist[], const struct Song bank[], int offset, int seed, int order[])
-{
-    int i = 0, idx = seed % SONGS;
-    int test;
-
-    do
-    {
-        test = idx + 2 < SONGS ? idx + 2 : idx + 2 - SONGS;
-        order[i] = idx + 2 < SONGS ? idx + 2 : idx + 2 - SONGS;
-
-        if (offset < 1 || offset > SONG_BANK)
-        {
-            offset = SONG_BANK;
-        }
-
-        playlist[i++] = bank[--offset];
-        test = idx + 1 < SONGS ? idx + 1 : idx + 1 - SONGS;
-        idx = idx + 1 < SONGS ? idx + 1 : idx + 1 - SONGS;
-
-    } while (i < SONGS);
-}
-
-void playSongs(const struct Song songs[], const int order[], int crossFade)
-{
-    int i, min, sec, total = 0;
-
-    for (i = 0; i < SONGS; i++)
-    {
-        total += songs[order[i]].seconds;
-
-        if (crossFade && (i + 1 < SONGS))
-        {
-            total -= crossFade;
-            calculateTimeFormat(songs[order[i]].seconds - crossFade, &min, &sec);
-        }
-        else
-        {
-            calculateTimeFormat(songs[order[i]].seconds, &min, &sec);
-        }
-        printf("%-20s %2d:%02d\n", songs[order[i]].title, min, sec);
-    }
-
-    calculateTimeFormat(total, &min, &sec);
-    printf("Total playing time: %3d:%02d\n", min, sec);
-}
 
 ```
 
