@@ -16,7 +16,7 @@ As a WCA student, you must conduct yourself in an honest and trustworthy manner 
 ## Section A (Concepts)
 1. (3 marks) Why is it important to initialize pointers in C, and what issues can arise from uninitialized pointers?
 2. (3 marks) How are pointers used as function parameters in C? Provide an example of modifying the original data.
-3. (3 marks) What are the three common modes in the fopen function in C, and what do they represent?
+3. (3 marks) What are the three common connection modes in the fopen function in C, and what do they represent?
 4. (3 marks) How does the binary search algorithm work in C? Describe its basic steps or give the code.
 
 ## Section B (Code Walkthroughs)
