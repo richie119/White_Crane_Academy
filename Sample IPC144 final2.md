@@ -103,6 +103,7 @@ As a WCA student, you must conduct yourself in an honest and trustworthy manner 
 
 ## Section B+ (Code Walkthroughs)
  You should do a walkthrough on the following code.(10 marks)
+ ```c
  1 #include <stdio.h>
  2 #include <string.h>
  3
